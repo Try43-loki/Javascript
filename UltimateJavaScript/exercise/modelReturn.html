@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Model</title>
+    <style>
+      body {
+        padding: 0px;
+        margin: 0;
+        box-sizing: border-box;
+        position: relative;
+      }
+      .box {
+        background-color: red;
+        height: 200px;
+        width: 300px;
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        transform: scale(1,0);
+        filter: blur(20px);
+        opacity: 0;
+        transition: all .3s ease;
+      }
+      .box.active{
+        transition: all .3s ease;
+        transform: scale(1,1);
+        filter: blur(0px);
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn-open" >open</button>
+    <button class="btn-close">close</button>
+    
+    </div>
+    <script>
+        const btnOpen = document.querySelector(".btn-open");
+        const section = document.createElement("section");
+        btnOpen.addEventListener("click",(e)=>{
+            section.innerHTML = "dara";
+            section.classList.add("box");
+          
+            document.body.append(section);
+            setTimeout(function() {
+            section.classList.add("active");
+            }, 10);
+            btnOpen.disabled = true;
+          
+        })
+        const btnClose = document.querySelector(".btn-close");
+        btnClose.addEventListener("click",(e)=>{
+          setTimeout(function() {
+            section.classList.remove("active");
+          }, 10);
+            btnOpen.disabled = false;
+
+        });
+    </script>
+  </body>
+</html>

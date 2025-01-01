@@ -1,0 +1,40 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  padding: 10px 20px;
+  margin: 0px 5px;
+  /* border: rebeccapurple; */
+  border: 2px solid #00d3fff2;
+  border-radius: 10px;
+  background: #00afff;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+.btn.red {
+  background-color: red;
+
+  border: 2px solid #ff0000c1;
+}
+.number {
+  font-size: 6rem;
+  margin-left: 24px;
+  /* margin-top: 1px; */
+  color: #656565;
+}

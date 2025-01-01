@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const promise = new Promise((possible, impossible) => {
+        const arr = [1, 2, 3];
+        if (arr.length > 0) {
+          possible(arr);
+        } else {
+          impossible("It doesn't works");
+        }
+      });
+      promise
+        .then((err) => {
+          console.log(err);
+        })
+        .catch((success) => {
+          console.log(success);
+        });
+    </script>
+  </body>
+</html>

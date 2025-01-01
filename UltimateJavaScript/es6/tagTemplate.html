@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GuessAge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="p-10">
+    <form action="">
+      <input
+        type="text"
+        id="names"
+        class="px-3 py-2 text-blue-600 bg-gray-200 outline-none border-2 border-blue-600 caret-blue-500"
+        placeholder="Enter you name..."
+      />
+      <input
+        type="number"
+        id="age"
+        placeholder="age"
+        class="px-3 py-2 w-20 bg-gray-200 text-emerald-600 outline-none border-2 border-emerald-600"
+      />
+      <button type="submit">Submit</button>
+    </form>
+    <h1 class="result text-amber-600 txt-xl font-medium">Unkown</h1>
+    <script>
+      const inputName = document.querySelector("#names");
+      const inputAge = document.querySelector("#age");
+      const form = document.querySelector("form");
+      const h1 = document.querySelector("h1");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const print = result(inputName.value, inputAge.value);
+        h1.innerHTML = print;
+      });
+      const result = (n, a) => {
+        return `${n.toUpperCase()} you are ${
+          a > 18 ? " Young" : "minor"
+        } person.`;
+      };
+    </script>
+  </body>
+</html>

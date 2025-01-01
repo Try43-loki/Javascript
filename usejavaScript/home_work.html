@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+            background:linear-gradient(to right, red,orange);
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+        }
+        .wrapper{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box{
+            display: flex;
+            flex-direction: column;
+            height: 200px;
+            width: 200px;
+            border:1px solid black;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            border: 2px solid #e3eeecc6;
+        }
+        .inpuy_e{
+            width: 200px;
+            height: 30px;
+            outline: unset;
+
+        }
+        .home{
+            height: 30px;
+            position: relative;
+        }
+        .pt{
+            position: absolute;
+            top: -13px;
+            font-size: 14px;
+            color: red;
+            display: none;
+         }
+         .inpuy_btn{
+            width: 50px;
+            background-color: #edc10db5;
+            padding: 5px;
+            line-height: 20px;
+            margin-bottom: -18px;
+            border-radius: 5px;
+                }
+         .tb{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         }
+    </style>
+    <script>
+        function btntuch(){
+            document.getElementById("show").style.display="block";
+            document.getElementById("showe").style.display="block";
+            document.getElementById("tye").style.border ="2px solid red";
+            document.getElementById("tyee").style.border ="2px solid red";
+        }
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <p class="tb">Login to your account</p>
+            Email:
+            <input class="inpuy_e" id="tye" type="text" placeholder="example@gmail.com">
+            <div class="home">
+                <p  class="pt" id="show">Please enter a valid email</p>
+            </div>
+            Password:
+            <input class="inpuy_e" id="tyee" type="password" placeholder="*******">
+            <div class="home">
+                <p class="pt" id="showe">Please enter a valid password</p>
+            </div>
+            <input onclick="btntuch()" class="inpuy_btn" type="button" value="Login">
+        </div>
+    </div>
+</body>
+</html>

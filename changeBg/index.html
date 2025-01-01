@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BG chang</title>
+    <style>
+        select { 
+            padding: 2px;
+            outline: none;
+            border: 1px solid #000;
+            border-radius: 10px;
+        }
+    </style>
+  </head>
+  <body
+    style="
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 0px;
+      margin: 0px;
+    "
+  >
+    <h1>Background color is <span>White</span></h1>
+    <select name="" id="">
+      <option value="white">White</option>
+      <option value="red">Red</option>
+      <option value="blue">Blue</option>
+      <option value="green">Green</option>
+    </select>
+    <script>
+      const select = document.querySelector("select");
+      const body = document.querySelector("body");
+      const span = document.querySelector("span");
+      select.addEventListener("change", () => {
+        body.style.backgroundColor = select.value;
+        span.innerText = select.value;
+      });
+    </script>
+  </body>
+</html>

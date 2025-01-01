@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>forIn</title>
+  </head>
+  <body>
+    <h1></h1>
+    <script>
+      const title = document.querySelector("body > h1");
+      //   const obj = { name: "Soytry", age: 18, marjor: "IT" };
+      //   let text = "";
+      //   for (let x in obj) {
+      //     text += obj[x] + " ";
+      //   }
+      //   title.innerHTML = text;
+
+      const person = [
+        { name: "Soytry", age: 20, position: "CS" },
+        { name: "Pisey", age: 17, position: "MC" },
+        { name: "Dara", age: 19, position: "ITE" },
+      ];
+      for (let i = 0; i < person.length; i++) {
+        var text = " ";
+        if (person[i].hasOwnProperty("name")) {
+          text += person[i].name + " ";
+        }
+        title.innerHTML = text;
+      }
+    </script>
+  </body>
+</html>

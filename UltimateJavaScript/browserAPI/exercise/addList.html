@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AddItem</title>
+    <style>
+      li.completed {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" name="" id="" placeholder="your item..." />
+    <button>Add</button>
+    <ul></ul>
+    <button>Clear</button>
+    <button>Remove complete</button>
+    <script>
+      const input = document.querySelector("input");
+      const btnAdd = input.nextElementSibling;
+      const ul = document.querySelector("ul");
+      const btnClear = ul.nextElementSibling;
+      const btnComplet = btnClear.nextElementSibling;
+
+      document.addEventListener("DOMContentLoaded", () => {
+        ul.innerHTML = localStorage.getItem("data");
+      });
+      const addTasks = () => {
+        if (!input.value.trim()) {
+          alert("add Items");
+        } else {
+          create();
+        }
+        saveData();
+        input.value = "";
+      };
+      btnAdd.addEventListener("click", addTasks);
+      btnClear.addEventListener("click", () => {
+        ul.innerHTML = "";
+        saveData();
+      });
+      const saveData = () => {
+        localStorage.setItem("data", ul.innerHTML);
+      };
+      const create = () => {
+        const li = document.createElement("li");
+        const dataInput = input.value;
+        li.innerHTML = dataInput;
+        ul.appendChild(li);
+      };
+    </script>
+  </body>
+</html>

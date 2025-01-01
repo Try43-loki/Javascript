@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body class="flex justify-center items-center h-screen flex-col">
+    <div class="flex">
+      <input
+        type="text"
+        name=""
+        id=""
+        placeholder="Enter your name..."
+        class="input-data text-blue-500 border outline-none border-blue-500 px-3 py-2 rounded-s-md"
+      />
+      <button
+        class="btn-save bg-blue-500 text-white font-medium outline-none shadow-md shadow-blue-500/50 rounded-e-md px-3 py-2 border border-blue-500 active:bg-blue-600 active:border-blue-600"
+      >
+        save name
+      </button>
+    </div>
+    <h1 class="mt-2 greeting"></h1>
+
+    <script>
+      const inputData = document.querySelector(".input-data");
+      const btnSave = document.querySelector(".btn-save");
+      const greeting = document.querySelector(".greeting");
+
+      const saveData = () => {
+        const name = inputData.value;
+        if (name) {
+          localStorage.setItem("name", name);
+          greeting.innerHTML = `Welcome ${name}.`;
+        }
+      };
+      const loadData = () => {
+        const getName = localStorage.getItem("name");
+        if (getName) {
+          greeting.innerHTML = `Welcome back ${getName}`;
+        }
+      };
+      document.addEventListener("DOMContentLoaded", loadData);
+      btnSave.addEventListener("click", saveData);
+    </script>
+  </body>
+</html>

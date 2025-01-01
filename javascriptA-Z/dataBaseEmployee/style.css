@@ -1,0 +1,234 @@
+html {
+  font-size: 62.5%;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.wrapper {
+  padding: 20px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 20px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+header .title {
+  font-size: 2.4rem;
+}
+header .addEmployee {
+  padding: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  outline: none;
+  border-radius: 10px;
+  border: none;
+}
+.popUp {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  width: 500px;
+  padding: 20px;
+  background: #a29e9e;
+  align-items: center;
+  right: 0;
+  top: 60px;
+  justify-content: center;
+  border-radius: 4px;
+}
+.data {
+  width: 100%;
+  align-items: flex-start;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.add {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.name > input {
+  width: 47%;
+  padding: 1%;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  outline: none;
+  border: none;
+}
+.url-img {
+  font-size: 2rem;
+  color: white;
+}
+.contact {
+  width: 100%;
+}
+.contact > input {
+  width: 100%;
+  padding: 1%;
+  font-size: 1.6rem;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+#submit {
+  font-size: 2rem;
+  width: 25%;
+  font-weight: bold;
+}
+.list-employee {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 6px;
+  border: 3px solid #0000001c;
+}
+.employeeList {
+  width: 40%;
+  height: 100px;
+
+  overflow: hidden;
+  height: auto;
+}
+.employee {
+  width: 60%;
+  display: flex;
+  height: auto;
+  border-left: 1px solid black;
+  flex-direction: column;
+  align-items: center;
+}
+.h3 {
+  font-size: 2rem;
+}
+.namelist {
+  padding: 6px 10px;
+  font-size: 1.8rem;
+  background: rgba(0, 0, 0, 0.15);
+  margin: 5px 0px;
+  color: rgba(0, 0, 0, 0.698);
+  position: relative;
+  border-radius: 4px;
+}
+.namelist:hover {
+  color: rgba(0, 0, 0, 0.798);
+  background: rgba(0, 0, 0, 0.25);
+}
+.namelist:active {
+  color: rgba(0, 0, 0, 0.998);
+  background: rgba(0, 0, 0, 0.35);
+}
+.allName {
+  overflow-y: scroll;
+  height: 350px;
+}
+.edit {
+  position: absolute;
+  right: 80px;
+  top: 4px;
+  border-radius: 4px;
+  background: rgba(0, 112, 255, 0.58);
+  color: #ffffffdc;
+  padding: 2px 3px;
+  transition: all 0.5s;
+}
+.edit:hover {
+  background: rgba(0, 112, 255, 0.88);
+  color: rgba(255, 255, 255, 0.963);
+}
+.edit:active {
+  background: rgba(0, 112, 255, 1);
+  color: rgba(255, 255, 255, 1);
+}
+.delete {
+  position: absolute;
+  right: 5px;
+  top: 4px;
+  background: rgba(255, 0, 0, 0.79);
+  color: #ffffffdc;
+  border-radius: 4px;
+  padding: 2px 3px;
+}
+.delete:hover {
+  background: rgba(255, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0.9);
+}
+.delete:active {
+  background: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
+}
+.detail {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.box-img {
+  width: 150px;
+  height: 150px;
+  background: rgba(0, 112, 255, 0.58);
+
+  border-radius: 75px;
+  border: none;
+  outline: none;
+  margin: 10px 0px 20px 0px;
+}
+.info-salary,
+.info-gmail,
+.info-tel,
+.info-dob,
+.info-address {
+  padding: 5px 0px;
+  font-size: 1.6rem;
+}
+.fullname {
+  font-size: 2rem;
+  font-weight: bold;
+}
+#img {
+  max-width: 100%;
+}

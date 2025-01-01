@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const cards = new Map([]);
+      var total = 0;
+      const addCard = () => {
+        cards.set(1100, { product: "cake", price: 20 });
+        cards.set(1200, { product: "rice", price: 10 });
+        cards.set(1300, { product: "drink", price: 15 });
+      };
+      const showCard = () => {
+        for (const [key, value] of cards) {
+          console.log(`Type : ${value.product}, Price : ${value.price}`);
+        }
+      };
+      const removeCard = () => {
+        cards.delete(1200);
+      };
+      const totalPrice = () => {
+        for (const [key, value] of cards) {
+          total += value.price;
+        }
+        console.log(`Payment is ${total}`);
+      };
+      addCard();
+      showCard();
+      console.log("after remove");
+      removeCard();
+      showCard();
+      totalPrice();
+    </script>
+  </body>
+</html>

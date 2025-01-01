@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // const promise = new Promise((resolve, reject) => {
+    //   resolve("You're success");
+    //   reject("Something went wrong");
+    // });
+    // promise.then((resp) => console.log(resp)).catch((err) => console.log(err));
+    const obj = { name: "soytry", age: 19 };
+    getObj("soytry")
+      .then((resp) => console.log(resp))
+      .catch((err) => console.log(err));
+    function getObj(name) {
+      return new Promise((resolve, reject) => {
+        const result = obj.name === name;
+        if (result) {
+          resolve(name);
+        } else {
+          reject("something went wrong");
+        }
+      });
+    }
+  </script>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todolist</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="flex justify-center items-start h-screen bg-gray-300">
+    <div
+      class="w-[300px] container-list bg-[#ffedff] text-black mt-10 p-4 rounded-md border-2 border-violet-600"
+    >
+      <div class="w-full flex justify-between items-center">
+        <h1 class="font-medium text-violet-700">Todo List</h1>
+        <img src="images/to-do-list.png" class="h-10 w-10" alt="" />
+      </div>
+      <form class="flex justify-between items-center mt-4 mb-2">
+        <input
+          type="text"
+          placeholder="Add new task..."
+          class="input-task px-3 py-2 caret-violet-600 text-violet-700 rounded-s-md bg-violet-200 w-full border-2 border-violet-600 outline-none"
+        />
+        <button
+          class="btn-add bg-violet-600 px-3 py-2 rounded-e-md border-2 border-violet-600 text-white active:bg-violet-700 active:border-violet-700"
+        >
+          Add
+        </button>
+      </form>
+
+      <p class="text-[12px] my-2 count-task">There is no such task</p>
+      <button
+        class="btn-clear bg-violet-600 text-white rounded-md w-full px-3 py-2 shadow-md shadow-violet-600/60 active:bg-violet-800"
+      >
+        Clear
+      </button>
+    </div>
+    <script>
+      const inputTask = document.querySelector(".input-task");
+      const btnAdd = document.querySelector(".btn-add");
+      const countTask = document.querySelector(".count-task");
+      const container = document.querySelector(".container-list");
+      const btnClear = document.querySelector(".btn-clear");
+      const getData = () => {
+        const ul = document.querySelector(".list-todo");
+        ul.innerHTML = localStorage.getItem("data");
+        counting();
+      };
+      const setData = () => {
+        const ul = document.querySelector(".list-todo");
+        localStorage.setItem("data", ul.innerHTML);
+      };
+      const showTask = () => {
+        const ul = document.createElement("ul");
+        ul.classList.add("list-todo");
+        container.insertBefore(ul, countTask);
+        getData();
+        removeList();
+      };
+      const removeList = () => {
+        const ulData = document.querySelector(".list-todo");
+        ulData.addEventListener("click", (e) => {
+          const target = e.target;
+          target.parentElement.remove();
+          counting();
+          setData();
+        });
+      };
+      const addTask = (e) => {
+        e.preventDefault();
+        const ul = document.querySelector(".list-todo");
+        if (!inputTask.value.trim()) {
+          alert("Add task!");
+        } else {
+          const li = document.createElement("li");
+          li.classList.add("list", "text-md");
+          li.innerHTML = `${inputTask.value}<i class="fa-solid fa-circle-xmark text-violet-600 active:text-violet-700 delete"></i>`;
+          ul.appendChild(li);
+          counting();
+          setData();
+        }
+
+        // console.dir(ul.childElementCount);
+      };
+      const clearData = () => {
+        const ul = document.querySelector(".list-todo");
+        ul.innerHTML = "";
+        counting();
+        setData();
+      };
+      const counting = () => {
+        const ul = document.querySelector(".list-todo");
+        const countData = ul.childElementCount;
+        countTask.innerHTML = `There ${countData > 1 ? "are" : "is"} ${
+          countData == 0 ? "no such" : `${countData}`
+        } ${countData > 1 ? "tasks" : "task"}`;
+        inputTask.value = "";
+      };
+      document.addEventListener("DOMContentLoaded", showTask);
+      btnClear.addEventListener("click", clearData);
+      btnAdd.addEventListener("click", addTask);
+    </script>
+  </body>
+</html>

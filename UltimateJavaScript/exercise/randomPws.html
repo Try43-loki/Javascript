@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PWS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body
+    class="h-screen flex justify-center items-center bg-gradient-to-t from-violet-800 to-fuchsia-800"
+  >
+    <section>
+      <h1 class="text-white text-xl font-medium">Generate Passwords</h1>
+      <div class="flex">
+        <div
+          class="px-3 py-2 bg-none w-56 border-2 border-e-0 rounded-s-md flex justify-between items-center text-white"
+        >
+          <p class="text-white text-xl" id="box">Password</p>
+          <i
+            class="fa-solid fa-clipboard text-black text-xl"
+            id="clipboard"
+          ></i>
+        </div>
+        <button
+          id="btn"
+          class="px-3 py-2 outline-none border-2 border-s-0 bg-white text-black hover:text-white hover:bg-black active:text-xl w-32 transition-all ease-linear duration-200 font-medium rounded-e-md"
+        >
+          Generate
+        </button>
+      </div>
+    </section>
+    <script>
+      const box = document.querySelector("#box");
+      const clipboard = document.querySelector("#clipboard");
+      const btn = document.querySelector("#btn");
+
+      const generate = () => {
+        var Password = "";
+        var length = 8;
+        const chars =
+          "ZXCVBNMLKJHGFDSAQWERTYUIOP0987654321azsxdcfvgbhnjmklpoiuytrewq!@#$%^&*()[];.,<>/?";
+
+        for (let i = 0; i < length; i++) {
+          Password += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        box.innerHTML = Password;
+      };
+      const copy = () => {
+        const copyPws = box.innerHTML;
+        console.log(copyPws);
+        if (copyPws == "Password") {
+          alert("Click generate passwords");
+        } else {
+          navigator.clipboard.writeText(copyPws).then(() => {
+            alert("Copied");
+          });
+        }
+      };
+      clipboard.addEventListener("click", copy);
+      btn.addEventListener("click", generate);
+    </script>
+  </body>
+</html>

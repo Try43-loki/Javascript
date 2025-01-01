@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+  </head>
+  <body>
+    <input type="text" id="todoInput" placeholder="Add a todo" />
+    <button id="addTodoButton">Add Todo</button>
+    <ul id="todoList"></ul>
+    <button id="removeCompletedButton">Remove Completed</button>
+
+    <script>
+      const todoInput = document.getElementById("todoInput");
+      const addTodoButton = document.getElementById("addTodoButton");
+      const todoList = document.getElementById("todoList");
+      const removeCompletedButton = document.getElementById(
+        "removeCompletedButton"
+      );
+
+      // Load todo list from localStorage on page load
+      window.onload = () => {
+        const todos = JSON.parse(localStorage.getItem("todos")) || [];
+        todos.forEach((todo) => {
+          addTodoToList(todo.text, todo.completed);
+        });
+      };
+
+      // Add todo item to the list and localStorage
+      addTodoButton.onclick = () => {
+        const todoText = todoInput.value;
+        if (todoText) {
+          addTodoToList(todoText, false);
+          saveTodoToLocalStorage(todoText, false);
+          todoInput.value = "";
+        }
+      };
+
+      // Add todo to the displayed list
+      function addTodoToList(text, completed) {
+        const li = document.createElement("li");
+        li.textContent = text;
+        if (completed) {
+          li.style.textDecoration = "line-through";
+        }
+        li.onclick = () => {
+          li.style.textDecoration =
+            li.style.textDecoration === "line-through" ? "" : "line-through";
+          updateTodoInLocalStorage(text);
+        };
+        todoList.appendChild(li);
+      }
+
+      // Save todo to localStorage
+      function saveTodoToLocalStorage(text, completed) {
+        const todos = JSON.parse(localStorage.getItem("todos")) || [];
+        todos.push({ text, completed });
+        localStorage.setItem("todos", JSON.stringify(todos));
+      }
+
+      // Update todo in localStorage
+      function updateTodoInLocalStorage(text) {
+        const todos = JSON.parse(localStorage.getItem("todos")) || [];
+        const todoIndex = todos.findIndex((todo) => todo.text === text);
+        todos[todoIndex].completed = !todos[todoIndex].completed;
+        localStorage.setItem("todos", JSON.stringify(todos));
+      }
+
+      // Remove completed todos
+      removeCompletedButton.onclick = () => {
+        const todos = JSON.parse(localStorage.getItem("todos")) || [];
+        const incompleteTodos = todos.filter((todo) => !todo.completed);
+        localStorage.setItem("todos", JSON.stringify(incompleteTodos));
+        todoList.innerHTML = "";
+        incompleteTodos.forEach((todo) => {
+          addTodoToList(todo.text, false);
+        });
+      };
+    </script>
+  </body>
+</html>

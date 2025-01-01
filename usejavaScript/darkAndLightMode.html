@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function setCookie(cname, cvalue, exdays) 
+        {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            let expires = "expires="+ d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+        function getCookie(cname) 
+        {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for(let i = 0; i <ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function red(){
+            let red = document.getElementById("body").classList.add('red');
+            let btn = document.getElementById("dark").style.backgroundColor = 'black'
+
+            let yellow = document.getElementById("body").classList.remove('yellow');
+            setCookie("btnC",btn,1);
+            setCookie("bodyRed","red",1);
+        }
+        function yellow(){
+            let yellow = document.getElementById("body").classList.add('defoalt');
+            let red = document.getElementById("body").classList.remove('red');
+            setCookie("bodyRed","defoalt",1);
+        }
+        var tm;
+        function getcoolie(){
+            tm = getCookie("bodyRed");
+            document.getElementById("body").classList.add(tm);
+        }
+    </script>
+    <style>
+        .defoalt{
+            background-color: none;
+        }
+        .red{
+            background-color: rgb(0, 0, 0);
+        }
+        .yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body onload="getcoolie()" id="body">
+    <button id="dark" onclick="red()">Dark</button>
+    <button onclick="yellow()">light</button>
+</body>
+</html>

@@ -1,0 +1,36 @@
+html {
+  font-size: 62.5%;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 300px;
+  padding: 10px;
+  height: auto;
+  flex-grow: 1;
+  gap: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background-color: dodgerblue;
+}
+.box {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-grow: 1;
+  background-color: orange;
+}
+table {
+  font-size: 1.7rem;
+}

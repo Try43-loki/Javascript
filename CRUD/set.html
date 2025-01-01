@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" id="form">
+      <input type="text" id="input" />
+      <input type="text" id="input2" />
+      <button type="submit" id="btn">AddItem</button>
+    </form>
+    <ul id="itemLists"></ul>
+    <script>
+      const form = document.querySelector("#form");
+      const input = document.querySelector("#input");
+      const input2 = document.querySelector("#input2");
+      const btn = document.querySelector("#btn");
+      const itemLists = document.querySelector("#itemLists");
+      const getItem = () => {
+        return JSON.parse(localStorage.getItem("items") || "[]");
+      };
+      const saveItem = (items) => {
+        localStorage.setItem("items", JSON.stringify(items));
+      };
+      const addItem = (event) => {
+        event.preventDefault();
+        const newInput = input.value.trim();
+        if (!newInput) return;
+        const items = getItem();
+        items.push(newInput);
+        saveItem(items);
+        input.value = "";
+        renderItem();
+      };
+      const renderItem = () => {
+        itemLists.innerHTML = "";
+        let items = getItem();
+        items.forEach((item, index) => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          const btnDelete = document.createElement("button");
+          btnDelete.textContent = "Delete";
+          btnDelete.addEventListener("click", () => deleteItems(index));
+          li.appendChild(btnDelete);
+          const btnEdit = document.createElement("button");
+          btnEdit.textContent = "Edit";
+          btnEdit.addEventListener("click", () => edit(index));
+          li.appendChild(btnEdit);
+          itemLists.appendChild(li);
+        });
+      };
+
+      const deleteItems = (index) => {
+        const items = getItem();
+        items.splice(index, 1);
+        saveItem(items);
+        renderItem();
+      };
+      const edit = (index) => {
+        let items = getItem();
+        let updateItems = prompt("Update items : ", items[index]);
+        if (updateItems !== null && updateItems.trim() !== "") {
+          items[index] = updateItems;
+          saveItem(items);
+          renderItem();
+        }
+      };
+      form.addEventListener("submit", addItem);
+      document.addEventListener("DOMContentLoaded", renderItem);
+    </script>
+  </body>
+</html>

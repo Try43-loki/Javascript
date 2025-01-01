@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loing | Cookie</title>
+    <style>
+        .wrapper{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+            .wrapper .formLogin{
+                border: 2px solid #00000029;
+                border-radius: 10px;
+                margin-top: 10vh;
+                box-shadow: 4px 4px 17px 0px;
+                /* height: 300px; */
+                width: 200px;
+                padding: 40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .wrapper .formLogin label{
+                display: flex;
+                flex-direction: column;
+                padding:10px;
+                
+            }
+            .wrapper .formLogin label input{
+                height: 30px;
+                border-radius: 10px;
+                border: 2px solid rgba(0, 119, 255, 0.163);
+                outline: unset;
+                box-sizing: border-box;
+                margin-top: 1px;
+               padding: 0px 10px;
+            }
+            .wrapper .formLogin label input:hover{
+                border: 2px solid rgba(0, 119, 255, 0.4);
+            }
+            #chek{
+                height: 15px !important;
+                display: flex;
+                margin-left: -58px;
+            }
+            #checkbox{
+                display: flex;
+                flex-direction: row;
+            }
+            #buttonLogin{
+                height: 30px;
+                width: 93%;
+                border-radius: 10px;
+                outline: unset;
+                border:2px solid #aba0a0a2;
+                font-size: 16px;
+                transition: .7s;
+            }
+            #buttonLogin:hover{
+                background-color: aqua;
+                border:2px solid #0000006b;
+            }
+    </style>
+    <script>
+        
+        function setCookie(cname, cvalue, exdays) 
+        {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            let expires = "expires="+ d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+        function getCookie(cname) 
+        {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for(let i = 0; i <ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        var name;
+        var pass;
+        function setMyCookie(){
+            var fN = document.getElementById("name").value;
+            var fN1 = document.getElementById("pass").value;
+            setCookie("name",fN,.001);
+            setCookie("pass",fN1,.001);
+            console.log("Set Cookies successfully...");
+        }
+        function showCatch(){
+             name = getCookie("name");
+             pass = getCookie("pass");
+            console.log(name,pass);
+        }
+        function showPin(){
+            document.getElementById("name").value = name;
+            document.getElementById("pass").value = pass;
+        }
+        // function getMyCookie(){
+        //     let rs = getCookie("fullName");
+        //     let msg = "";
+        //     if(rs == ""){
+        //         msg = "The Cookies is empty...";
+        //     }else{
+        //         msg = "The Cookies value is: "+ rs;
+        //     }
+        //     document.getElementById("result").innerHTML = msg;
+        // }
+        // function clearMyCookie(){
+        //     setCookie("fullName","",0);
+        //     console.log("Cookies have been cleared");
+        // }
+    
+     </script>
+</head>
+<body onload="showPin()">
+    <div class="wrapper">
+        <div class="formLogin">
+            <label>Username
+                <input id="name" type="text" placeholder="Iron Man">
+            </label>
+            <label>Password
+                <input id="pass" type="password" placeholder="Password">
+            </label>
+            <label id="checkbox" >
+                <input onchange="setMyCookie()" id="chek" type="checkbox">Remember me
+            </label>
+            <button onclick="showCatch()"  id="buttonLogin">Login</button>
+        </div>
+    </div>
+</body>
+</html>

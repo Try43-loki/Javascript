@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        .wrapper{
+             width: 100%;
+             margin: 0px;
+             padding: 0px;
+             height: 100%;
+             align-items: center;
+             display: flex;
+             justify-content: center;
+             flex-direction: column;
+        }
+        .wrapper .box_one{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 13px #9a8080;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 15px;
+            background: #88e20b;
+            border: 7px solid #ffff;
+        }
+        .wrapper .box_one img{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+
+        }
+        .wrapper .box_two{
+            box-shadow: 5px 3px 16px #8e8080ca;
+            margin-top: 111px;
+            width: 400px;
+            height: 400px;
+            border: 2px solid rgba(220, 206, 206, 0.529);
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        .wrapper .box_two input{
+            border-radius: 10px;
+            background: #ffffff;
+            width: 186px;
+            padding: 10px;
+            margin-top: -117px;
+        }
+    </style>
+    <script>
+        function inputphoto(input){
+            if(input.files && input.files[0]){
+                var reader = new FileReader();
+                reader.onload = function(e){
+                    document.getElementById("showimg").src = e.target.result;
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box_one">
+            <img src="/1 (229).jpg" id="showimg">
+        </div>
+        <div class="box_two">
+            <input id="imginput" type="file" onchange="inputphoto(this)" >
+        </div>
+    </div>
+</body>
+</html>

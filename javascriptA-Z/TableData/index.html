@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TableData</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2>Crud Application</h2>
+      <form class="list-data">
+        <div class="data">
+          <label for="fullName">Fullname</label>
+          <input type="text" id="fullName" placeholder="Enter Fullname" />
+        </div>
+        <div class="data">
+          <label for="id">ID</label>
+          <input type="text" id="id" placeholder="Enter ID" />
+        </div>
+        <div class="data">
+          <label for="position">Position</label>
+          <input type="text" id="position" placeholder="Enter Position" />
+        </div>
+        <div>
+          <input type="button" id="submit" value="Submit" />
+        </div>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Position</th>
+            <th>Costume</th>
+          </tr>
+        </thead>
+        <tbody class="employee-list">
+          <tr>
+            <td>Mey soytry</td>
+            <td>101</td>
+            <td>Web Development</td>
+            <td>
+              <a href="#" class="edit">Edit</a>
+              <a href="#" class="delete">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

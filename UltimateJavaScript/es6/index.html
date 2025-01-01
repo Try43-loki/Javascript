@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>start</button>
+    <button>stop</button>
+    <button>cancel</button>
+    <script>
+      // const btns = document.querySelectorAll("button");
+      // const arrBtns = [...btns];
+      // const arrName = [1, 2, 3, 4, 4, 5, 6];
+      // const arrNum = [9, 8, 7];
+
+      // const arrFull = [...arrName, ...arrNum];
+      // // console.log(arrFull,arrName,arrNum);
+
+      // const print = (name = "Dara") => console.log(name);
+      // print("try");
+      // const job = "IT";
+      // const obj = {
+      //   name: "dara",
+      //   job,
+      // };
+      // const btn = document.querySelectorAll("button");
+      // const btns = [...btn];
+      // btns.forEach((e) => console.log(e));
+
+      // const totalNumber = (n1, n2, ...number) => {
+      //   let result = n1 + n2;
+      //   result += number.reduce((ac, cr) => ac + cr, 0);
+      //   return result;
+      // };
+      // const number = [10, 20, 30, 40];
+      // console.log(totalNumber(1, 2, ...number));
+
+      // const obj = {
+      //   name: "dara",
+      //   age: 18,
+      //   major: "IT",
+      // };
+      // const newObj = Object.entries(obj).forEach(([key, value]) => {
+      //   console.log(`${key}: ${value}`);
+      // });
+      // const filterNumber = (...number) =>
+      //   number.filter((item) => item % 2 == 0);
+      // const Number = [2, 3, 4, 5, 6, 7, 8, 10];
+      // console.log(filterNumber(...Number));
+
+      // const user = {
+      //   name: "Dara",
+      //   age: 18,
+      // };
+
+      // const update = (user, newAge) => (newUser = { ...user, age: newAge });
+      // console.log(update(user, 30));
+
+      const removeDuplicates = (arr) => {
+        const newArr = new Set(arr);
+        return [...newArr];
+      };
+      console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); // Output should be [1, 2, 3, 4, 5]
+    </script>
+  </body>
+</html>

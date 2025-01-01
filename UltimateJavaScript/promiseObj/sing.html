@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const singAsong = (name, duration) => {
+        const promise = new Promise((pos, imps) => {
+          if (name && duration) {
+            setTimeout(() => {
+              console.log(`Sing song ${name}`);
+              pos("Dar");
+            }, duration);
+          } else {
+            imps();
+          }
+        });
+        return promise;
+      };
+      const liveConcert = async () => {
+        console.log(`Starting...`);
+        try {
+          await singAsong("APT", 2000);
+          await singAsong("A");
+          await singAsong("B", 1000);
+          await singAsong("End", 1000);
+        } catch (err) {
+          console.log("Impossible");
+        }
+      };
+      liveConcert();
+    </script>
+  </body>
+</html>

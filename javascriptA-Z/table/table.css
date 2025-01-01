@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+.data {
+  width: 200px;
+  height: 200px;
+  overflow: scroll;
+  overflow-x: hidden;
+  border: 2px solid black;
+}
+#click {
+  padding: 10px;
+  font-size: 1.3rem;
+  background-color: dodgerblue;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.399);
+  border-radius: 10px;
+}

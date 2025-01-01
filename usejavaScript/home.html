@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data</title>
+    <style>
+        .wrapper{
+            width: 300px;
+            /* height: 300px; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0px auto;
+        }
+        .wrapper .box{
+            background-color: rgb(8, 0, 238);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 23px;
+            font-weight: bold;
+            color: #fff;
+                }
+        .wrapper .button_group{
+            margin-top: 10px;
+        }
+        .wrapper .button_group button{
+            width: 40px;
+            padding: 5px;
+        }
+    </style>
+    <script>
+        function myput(numpara){
+            var num = numpara;
+            document.getElementById("input").innerHTML = num;
+        }
+        function colors(colorse){
+            var cls = colorse;
+            document.getElementById("input").style.backgroundColor = cls; 
+        }
+
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box" id="input" >
+            Result
+        </div>
+        <div class="button_group">
+            <button onclick="myput('One')">1</button>
+            <button onclick="myput('Two')">2</button>
+            <button onclick="myput('Three')">3</button>
+        </div>
+        <input type="color" class="color_box" id="colors" onclick="colors('green')">
+        Width:<input type="range" class="range_box">
+        Height:<input type="range" class="range_box">
+    </div>
+</body>
+</html>

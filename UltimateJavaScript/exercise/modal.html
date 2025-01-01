@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .hero-section {
+        height: 100vh;
+        /* background-color: red; */
+        position: relative;
+        background-image: url(candle-7562931.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .btn-open {
+        text-transform: uppercase;
+
+        border-radius: 10px;
+        outline: none;
+        text-align: center;
+        font-weight: bold;
+        padding: 10px 30px;
+        background: rgba(255, 255, 255, 0.423);
+        backdrop-filter: blur(10px);
+        color: rgb(240, 95, 6);
+        border: 2px solid rgb(255, 200, 0);
+      }
+      .btn-open:active {
+        scale: 1.1;
+      }
+      .modal {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.704);
+        visibility: hidden;
+        inset: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* transition: 0.4s ease; */
+      }
+      .modal-body {
+        background: white;
+        padding: 10px;
+        gap: 5px;
+        border-radius: 10px;
+        border: 2px solid gold;
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        width: 30%;
+        margin: 0 auto;
+        filter: blur(30px);
+        transform: scale(1, 0);
+        opacity: 0.5;
+      }
+      .modal-body.active {
+        filter: blur(0px);
+        transform: scale(1, 1);
+        opacity: 1;
+        transition: all 0.2s ease;
+      }
+      .btn-close {
+        border: none;
+        outline: none;
+        font-size: 20px;
+        background-color: transparent;
+      }
+
+      .btn-close:hover {
+        transform: rotate(180deg);
+      }
+      .btn-close:active {
+        scale: 1.1;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="hero-section">
+      <button class="btn-open">open</button>
+      <div class="modal">
+        <div class="modal-body">
+          <button class="btn-close">
+            <i class="fa-regular fa-circle-xmark"></i>
+          </button>
+          <p>Soytry is a Web-fullStack</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      const heroSection = document.querySelector(".hero-section");
+      const modal = document.querySelector(".modal");
+      const modalBody = document.querySelector(".modal-body");
+      const btnOpen = document.querySelector(".btn-open");
+      const btnClose = document.querySelector(".btn-close");
+      const toggleFuction = (open) => {
+        if (open) {
+          modal.style.visibility = "visible";
+          modalBody.classList.add("active");
+        } else {
+          modal.style.visibility = "hidden";
+          modalBody.classList.remove("active");
+        }
+      };
+      btnOpen.addEventListener("click", () => {
+        toggleFuction(true);
+      });
+      btnClose.addEventListener("click", () => {
+        toggleFuction(false);
+      });
+      modal.addEventListener("click", (t) => {
+        if (t.target == modal) {
+          toggleFuction(false);
+        }
+      });
+    </script>
+  </body>
+</html>

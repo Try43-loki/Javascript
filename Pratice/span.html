@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use span</title>
+    <style>
+        .wrapper{
+            margin: 0 auto;
+            padding: 0px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .wrapper .box{
+            border: 1px solid black;
+            height: 200px;
+            width: 200px;
+            padding: 10px 10px 10px 10px;
+            background-color: yellow;
+            border-radius: 10px;
+        }
+        .wrapper .box img{
+            border-radius: 10px;
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+            position: relative;
+        }
+        .wrapper .box span{
+            position: absolute;
+            background-color: #ffee586b;
+            display: flex;
+            font-size: 19px;
+            justify-content: center;
+            text-align: center;
+            height: 30px;
+            margin-top: -34px;
+            border-radius: 0px 0px 10px 10px;
+            align-items: center;
+            width: 200px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <img src="https://c2.staticflickr.com/4/3044/3423865833_2276ba0d32_b.jpg">
+            <span>The fish</span>
+        </div>
+    </div>
+</body>
+</html>

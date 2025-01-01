@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remember U</title>
+  </head>
+  <body>
+    <input type="text" name="" id="" placeholder="yourname" />
+    <button>save name</button>
+    <h1></h1>
+    <script>
+      const input = document.querySelector("input");
+      const btn = document.querySelector("button");
+      const h1 = document.querySelector("h1");
+      const picValue = () => {
+        const data = input.value;
+        localStorage.setItem("save", data);
+        if (data) {
+          h1.innerHTML = `Welcome ${data}`;
+        }
+      };
+      const loadValue = () => {
+        const loadData = localStorage.getItem("save");
+        if (loadData) {
+          h1.innerHTML = `Welcome back ${loadData}`;
+        }
+      };
+      btn.addEventListener("click", () => picValue());
+      document.addEventListener("DOMContentLoaded", () => loadValue());
+    </script>
+  </body>
+</html>

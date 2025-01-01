@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   const mapObject = new Map([
+      //     ["name ", "Soytry"],
+      //     ["age", 18],
+      //     ["major", "IT"],
+      //   ]);
+
+      //   mapObject.forEach((value, key) => {
+      //     console.log(`${key} : ${value}`);
+      //   });
+      //   for (const [key, value] of mapObject) {
+      //     console.log(`${key} : ${value}`);
+      //   }
+
+      const userMap = new Map();
+      userMap.set(1, { name: "Soytry", age: 18, major: "IT" });
+      userMap.set(2, { name: "Dara", age: 19, major: "CS" });
+      userMap.set(3, { name: "Hak", age: 18, major: "MIT" });
+      userMap.set(4, { name: "Seang", age: 20, major: "ITE" });
+
+      if (userMap.has(2)) {
+        const newUser = userMap.get(2);
+        newUser.major = "Web";
+        userMap.set(2, newUser);
+      }
+
+      for (let [key, value] of userMap) {
+        console.log(`${key} : ${value.name} ${value.age} ${value.major}`);
+      }
+    </script>
+  </body>
+</html>

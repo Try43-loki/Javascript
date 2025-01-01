@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function printName(greeting, size) {
+        console.log(
+          ` ${greeting} ${this.name} your brand ${this.brand} ${size}`
+        );
+      }
+
+      const person = { name: "Soytry", brand: "Toyota" };
+
+      const print1 = printName.call(person, "Good evening,", "small");
+      const print2 = printName.apply(person, ["Good evening", "Big"]);
+      const print3 = printName.bind(person, "Good evening,", "meduim");
+      print3();
+
+      //defualt parameter
+
+      function show(name = "dara") {
+        console.log(name);
+      }
+      show();
+    </script>
+  </body>
+</html>

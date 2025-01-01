@@ -1,0 +1,15 @@
+block-scope{
+    *use in block scope and can not use outside block scope.
+    let 
+    const
+}
+function-scope{
+    var use in function but can not use outside function.
+}
+Primitive data type{
+    string , number ,Boolean, Null, undefind, symbull(es6).
+}
+Higher Order & Callback function{
+    Higher Order can be recieve another function cha para rbos vea
+    
+}

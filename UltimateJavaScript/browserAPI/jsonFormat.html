@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Json Format</title>
+  </head>
+  <body>
+    <script>
+      // for array
+      const arr = ["dara", "heng", "paii", "khom", "rith", "hout"];
+      localStorage.setItem("name", JSON.stringify(arr));
+      const getItem = localStorage.getItem("name");
+      const result = JSON.parse(getItem);
+      //   console.log(result);
+      // for object
+      const obj = { brand: "BMW", salary: 1000, from: "THE US" };
+      localStorage.setItem("car", JSON.stringify(obj));
+      const getCar = localStorage.getItem("car");
+      const resultCar = JSON.parse(getCar);
+      //   console.log(resultCar.from);
+      // for array object
+      const arrObj = [
+        { brand: "lcdd", from: "Canada" },
+        { brand: "gucci", from: "london" },
+        { brand: "Haman", from: "Cambodia" },
+      ];
+      localStorage.setItem("product", JSON.stringify(arrObj));
+      const getProduct = localStorage.getItem("product");
+      const resultProduct = JSON.parse(getProduct).sort((a, b) =>
+        a.brand.localeCompare(b.brand)
+      );
+      const newArr = resultProduct
+        .map((e) => {
+          return `<h1>${e.brand}</h1>`;
+        })
+        .join("");
+      document.body.innerHTML = newArr;
+    </script>
+  </body>
+</html>

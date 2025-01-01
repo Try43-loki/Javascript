@@ -1,0 +1,107 @@
+html {
+  font-size: 62.5%;
+}
+:root {
+  --gray: #95a5a6;
+}
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--gray);
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.container {
+  padding: 20px;
+  height: auto;
+  background: #b5e7f399;
+  border-radius: 20px;
+}
+.container > h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #4a69bd;
+  font-size: 2.3rem;
+}
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+.input-container > input {
+  outline: none;
+
+  border-radius: 5px 0px 0px 5px;
+  height: 24px;
+  box-sizing: border-box;
+  padding: 14px 10px;
+  color: #000000bd;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  padding: 16px 14px;
+  border: none;
+}
+.input-container > button {
+  padding: 7px;
+  border: none;
+  font-size: 2rem;
+  height: 24px;
+  padding: 16px 14px;
+  box-sizing: border-box;
+  line-height: 0px;
+  /* margin-right: 7px; */
+
+  border-radius: 0px 5px 5px 0px;
+}
+.ul-container {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin-left: -40px;
+}
+.ul-container > li {
+  width: 96%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+  position: relative;
+  font-size: 1.6rem;
+  color: #d3f6ff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  align-items: center;
+}
+.ul-container li > span {
+  position: absolute;
+  right: 0px;
+  background: rgba(255, 255, 255, 0.645);
+  width: 17px;
+  border-radius: 50%;
+  height: 17px;
+  line-height: 19px;
+  text-align: center;
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.51);
+  transition: 0.7s all;
+}
+.ul-container li > span:hover {
+  background-color: rgb(255, 22, 22);
+}

@@ -1,0 +1,119 @@
+html {
+  font-size: 62.5%;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.238);
+  height: 100vh;
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+.wrapper > h2 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+.list-data {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+.data {
+  position: relative;
+}
+.data > label {
+  position: absolute;
+  top: -26px;
+  left: 2px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00000096;
+}
+.data > input {
+  height: 30px;
+  border-radius: 6px;
+  width: 350px;
+  padding: 10px;
+  font-size: 1.3rem;
+  outline: none;
+  border: 1px solid dodgerblue;
+}
+#submit {
+  display: flex;
+  margin-top: -30px;
+  padding: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid dodgerblue;
+  background: #ffff;
+}
+table {
+  margin-top: 20px;
+  width: 80%;
+  font-size: 1.6rem;
+  border-collapse: collapse;
+  color: black;
+}
+table tr th,
+td {
+  text-align: start;
+  padding: 5px;
+}
+table thead {
+  background-color: rgb(0, 89, 255);
+  color: #fff;
+  font-size: 1.9rem;
+}
+table tbody {
+  background-color: rgba(128, 128, 128, 0.768);
+}
+.edit,
+.delete {
+  text-decoration: none;
+  color: black;
+  background: #ffeb3b;
+  font-size: 1.7rem;
+  padding: 0px 10px;
+  border-radius: 4px;
+  color: #fff;
+}
+.edit {
+  background-color: green;
+}
+.delete {
+  background-color: red;
+}

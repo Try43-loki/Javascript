@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic</title>
+    <style>
+        .wrapper{
+            width:70%;
+            margin:40px auto;
+            height: 100px;
+            border-radius:10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .wrapper .progesbar{
+            width: 100%;
+            height: 20px;
+            border:1px solid black;
+            border-radius: 10px;
+        }
+        .wrapper .button_start{
+            margin-top:20px;
+        }
+        .wrapper .progesbar .loading{
+            width: 0%;
+            background-color: green;
+            height:20px;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        var pct = 0;
+        var timer;
+        function laoding(){
+            pct +=1;
+            if(pct == 100){
+                clearInterval(timer);
+                document.getElementsByClassName("wrapper")[0].style.display = "none";
+            }         
+            document.getElementsByClassName("tex")[0].innerHTML = pct + "%";
+            let progress = document.getElementsByClassName("loading")[0];
+            progress.style.width= pct + "%";
+        }
+        function startfuction(){
+            timer = setInterval(laoding,80);
+        }
+        function stopFuction(){
+            clearInterval(timer);
+        }
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="tex">
+            ....
+        </div>
+        <div class="progesbar">
+         
+            <div class="loading">
+                
+            </div>
+        </div> 
+        <div class="button_start">
+            <button onclick="startfuction()" >Start</button>
+            <button onclick="stopFuction()">Stop</button>
+        </div>
+    </div>
+</body>
+</html>

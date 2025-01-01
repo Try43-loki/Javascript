@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const brand = ["Toyota","Ford","Ford","BMW","Pouch"];
+        // const myBrand = brand.reduce((acc,item)=>{
+        //     if(!acc.includes(item)){
+        //         acc.push(item);
+        //     }
+        //     return acc;
+        // } ,[]);
+        const unique = new Set(brand);
+        const myBrand = [...unique];
+        console.log(myBrand)
+        // console.log(myBrand);
+
+    </script>
+</body>
+</html>

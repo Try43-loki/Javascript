@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const student = new Map([]);
+      const average = (...number) =>
+        number.reduce((ac, cr) => ac + cr, 0) / number.length;
+      const inputStudent = () => {
+        student.set(101, { name: "Alice", score: average(10, 20, 30, 40, 50) });
+        student.set(102, { name: "Nana", score: average(11, 22, 33, 10, 30) });
+        student.set(103, {
+          name: "Alucard",
+          score: average(22, 44, 11, 90, 20),
+        });
+      };
+      const showData = () => {
+        for (const [key, value] of student)
+          console.log(`${key} : ${value.name} : ${value.score}`);
+      };
+      const highestScore = () => {
+        var higest = 0;
+        for (const [key, value] of student) {
+          if (higest < value.score) {
+            higest = value.score;
+          }
+        }
+        for (const [key, value] of student) {
+          if (value.score == higest) {
+            console.log(`The highest is ${value.name} has ${value.score}`);
+          }
+        }
+      };
+
+      inputStudent();
+      showData();
+      highestScore();
+    </script>
+  </body>
+</html>

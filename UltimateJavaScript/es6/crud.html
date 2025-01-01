@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const employee = new Map([]);
+      //create function
+      const inputEmployee = () => {
+        employee.set(101, { name: "Dara", age: 20, job: "Web dev" });
+        employee.set(102, { name: "Vin", age: 21, job: "Software" });
+        employee.set(103, { name: "Jeata", age: 23, job: "DevOps" });
+      };
+
+      const outputData = () => {
+        console.log("ID   |   Name   |   Age   | Job");
+        for (const [key, value] of employee)
+          console.log(`${key} | ${value.name} | ${value.age} | ${value.job}`);
+      };
+      var id = 102;
+      const updateData = (id) => {
+        console.log(`I want to update employee ${id}`);
+        if (employee.has(id)) {
+          const temp = employee.get(id);
+          temp.job = "Project managment";
+          employee.set(id, temp);
+        }
+      };
+      const deleteData = () => {
+        console.log("I want to resig employee has id 103");
+        if (employee.has(103)) {
+          employee.delete(103);
+        }
+      };
+      inputEmployee();
+      outputData();
+      updateData(id);
+      deleteData();
+      outputData();
+    </script>
+  </body>
+</html>

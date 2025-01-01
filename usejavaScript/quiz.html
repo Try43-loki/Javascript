@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        .wrapper{
+            width:100%;
+            height:100vh;
+        }
+        .body_content{
+            margin: 0px  auto;
+            width:600px;
+            height:500px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        .wrapper .body_content .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            font-size: 26;
+            color:#fff;
+            font-weight: bold;
+        }
+        .body_content .button_group button{
+            width: 30px;
+            padding: 7px;
+            font-size: 16px;
+            font-weight: bold;
+            color:#fff;
+            background-color: cyan;
+            border:unset;
+        }
+        .body_content .row{
+            margin-top:-10px;
+        }
+    </style>
+    <script>
+        function mybtn(para){
+            var num = para.value;
+            var result = "";
+            if(num == 1){
+                result = "One";
+            }else if(num == 2){
+                result="Two";
+            }else if(num == 3){
+                result = "Three";
+            }else{
+                result = "other...";
+            }
+            document.getElementById("boxi").innerHTML = result;
+
+        }
+        function myheight(){
+            var h = document.getElementById("height").value;
+            h = h + "px";
+            document.getElementById("boxi").style.height = h;
+        }
+        function mywidth(){
+            var w = document.getElementById("width").value;
+            w = w +"px";
+            document.getElementById("boxi").style.width = w;
+            
+        }
+        function font(){
+            var f = document.getElementById("fontsize").value;
+            f = f + "px";
+            document.getElementById("boxi").style.fontSize = f;
+        }
+        function color(){
+            var cc = document.getElementById("colorbg").value;
+            document.getElementById("boxi").style.backgroundColor = cc;
+        }
+        function colortxt(){
+            var cct = document.getElementById("colortx").value;
+            document.getElementById("boxi").style.color = cct;
+        }
+        function shape(parra){
+            var sh = parra.value;
+            if (sh == "circle"){
+                document.getElementById("boxi").style.borderRadius ="50%";
+            }else{
+                document.getElementById("boxi").style.borderRadius ="0%";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="body_content">
+            <div class="box" id="boxi">
+                result
+            </div>
+            <div class="button_group">
+                <button value="1" onclick="mybtn(this)"  >1</button>
+                <button value="2" onclick="mybtn(this)"  >2</button>
+                <button value="3" onclick="mybtn(this)"  >3</button>
+            </div>
+            <div class="row">
+                <label>
+                    Height:<input type="range" onchange="myheight()" id="height" min="100" max="300" value="150" >
+                </label>
+            </div>
+            <div class="row">
+                <label>
+                    Width:<input type="range" onchange="mywidth()" id="width" min="100" max="300" value="150" >
+                </label>
+            </div>  
+            <div class="row">
+                <label>
+                    FontSize:<input type="range" onchange="font()" id="fontsize" min="15" max="100" value="15" >
+                </label>
+            </div> 
+            <div class="row">
+                <label>
+                    ColorBG:<input type="color" onchange="color()" id="colorbg" >
+                </label>
+                <label>
+                    ColorTXT:<input type="color" onchange="colortxt()" id="colortx" >
+                </label>
+            </div>
+            <div>
+                <div>
+                    <label>
+                       Sqare: <input checked type="radio" name="n" id="sqa" value="sqare" onchange="shape(this)" >
+                    </label>
+                    <label>
+                        Circle:<input type="radio" name="n" id="cl" value="circle" onchange ="shape(this)" >
+                    </label>
+                    
+                </div>
+            </div>  
+        </div>
+    </div>
+</body>
+</html>

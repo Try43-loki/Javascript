@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calulator</title>
+</head>
+<style>
+    .calulator{
+        width: 600px;
+        height: 700px;
+        border: 1px solid cyan ;
+        display: flex; 
+        justify-content: space-around;
+        align-content: flex-start;
+    }
+    .calulator .on-block{
+        border: 1px solid black;
+        color: #ffff;
+        height: 20px;
+        line-height: 20px;
+        width: 50px;
+        text-align: center;
+        margin-top: 2%;
+        border-radius: 8px;
+        background-color:rgba(52, 152, 219,1.0);
+        text-transform:uppercase;
+
+    }
+    .mblock{
+        display: flex; 
+        justify-content: space-around;
+        align-content: flex-start;
+    }
+    .mblock .o-block{
+        border: 1px solid black;
+        color: #ffff;
+        height: 20px;
+        line-height: 20px;
+        width: 50px;
+        text-align: center;
+        margin-top: 2%;
+        border-radius: 8px;
+        background-color:rgba(52, 152, 219,1.0);
+        text-transform:uppercase;
+
+    }
+</style>
+<body>
+    <div class="calulator">
+        <div class="on-block">H/M/S</div>
+        <div class="on-block">&#8730;</div>
+        <div class="on-block">%</div>
+        <div class="on-block">TAX-</div>
+        <div class="on-block">TAX+</div>
+    </div>
+    <div class="mblock">
+        <div class="o-block">+/-</div>
+        <div class="o-block">MRC</div>
+        <div class="o-block">M+</div>
+        <div class="o-block">M-</div>
+        <div class="o-block">&#247;</div>
+    </div>
+</body>
+</html>

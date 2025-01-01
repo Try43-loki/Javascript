@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StoreData</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h2 class="title">Employee Database Management</h2>
+        <button class="addEmployee">Add Employee</button>
+        <div class="popUp">
+          <h3 class="add">Add Employee</h3>
+          <form class="data">
+            <div class="name">
+              <input type="text" id="firstName" placeholder="Firstname" />
+              <input type="text" id="lastName" placeholder="Lastname" />
+            </div>
+            <div class="url-img">
+              <label for="imge">Photo</label>
+              <input type="file" id="imge" />
+            </div>
+            <div class="contact">
+              <input type="tel" id="telephone" placeholder="Contact" />
+            </div>
+            <div class="contact">
+              <input type="number" id="salary" placeholder="Salary" />
+            </div>
+            <div class="contact">
+              <input type="text" id="address" placeholder="Address" />
+            </div>
+            <div class="contact">
+              <input type="email" id="email" placeholder="Gmail" />
+            </div>
+            <div class="contact">
+              <input type="date" id="date" />
+            </div>
+            <div class="contact">
+              <input type="button" value="Submit" id="submit" />
+            </div>
+          </form>
+        </div>
+      </header>
+      <div class="list-employee">
+        <div class="employeeList">
+          <h3 class="h3">Employee List</h3>
+          <div class="allName">
+            <h3 class="namelist">
+              Mey soytry <span class="edit">Edit</span
+              ><span class="delete">Delete</span>
+            </h3>
+          </div>
+        </div>
+        <div class="employee">
+          <h3 class="h3">Employee</h3>
+          <div class="detail">
+            <div class="box-img">
+              <img src="" id="img" />
+            </div>
+            <p class="fullname">Mey soytry</p>
+            <p class="info-salary">1000$</p>
+            <p class="info-gmail">Meysoytry@gmail.com</p>
+            <p class="info-tel">086329085</p>
+            <p class="info-address">Kadal</p>
+            <p class="info-dob">25/4/2006</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

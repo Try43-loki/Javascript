@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quix2</title>
+    <style>
+        body{
+            background-image: url(https://th.bing.com/th/id/R.5b14c91b7fce57b712e3d23d52570356?rik=PxejQsV28Q3VLg&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f03%2fGreen-Wallpapers-HD-background.png&ehk=IRzFLyHmg69jabff9j196RcZcf2Jb1DHylxZXdZa7fw%3d&risl=1&pid=ImgRaw&r=0);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin:0px;
+            padding:0px;
+        }
+        .wrapper{
+            margin:0px;
+            padding: 0px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            height: 100vh;
+        }
+        .wrapper .body_cont{
+            display: flex;
+            border-radius: 12px;
+            flex-direction: column;
+            width: 300px;
+            height: 392px;
+            margin: 0px auto;
+            border: 2px solid #ffffff4a;
+            align-items: center;
+            backdrop-filter: blur(3px)
+        }
+        .wrapper .body_cont .input_box{
+            display: flex;
+            flex-direction: column;
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            align-items: center;
+            justify-content: space-around;
+            
+        }
+        .wrapper .body_cont .out_put{
+            margin-top: -24px;
+            text-align: center;
+            font-size: 18px;
+            align-items: center;
+            display: flex;
+            color: #a0ebfa;
+            font-weight: 600;
+        }
+        #click{
+            width: 74px;
+            height: 32px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #b6dab4;
+            text-align: center;
+            background: #00ff2357;
+            border: unset;
+            text-transform: capitalize;
+            border-radius: 10px;
+        }
+        #txtone{
+            border: unset;
+            background: #aaffa16e;
+            border-radius: 10px;
+            width: 60px;
+            height: 23px;
+            text-align: center;
+            padding: 8px;
+            font-size: 21px;
+            font-weight: bold;
+            color: #aaffa16e;
+            outline: unset;
+        }
+        .wrapper .body_cont p{
+            font-size: 23px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function calculate(){
+             var mekun = document.getElementById("txtone").value;
+             
+             var output = document.getElementById("output");
+             var str ="";
+             var multiply =0;
+             for (let i=1 ; i<= 10 ; i++){
+                multiply = mekun * i;
+                str = str + "<br>" + mekun + "x" + i + "=" + multiply;
+             }
+             output.innerHTML = str;
+        }
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="body_cont">
+            <p>មួយចំនួនគុណនឹងដប់</p>
+            <div class="input_box">
+                <input type="text" placeholder="00" id="txtone">
+                <input type="button" id="click" onclick="calculate()" value="CalCu">
+            </div>
+            <div class="out_put" id="output">
+            
+            </div>
+        </div>
+    </div>
+</body>
+</html>

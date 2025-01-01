@@ -1,0 +1,63 @@
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+}
+.wrapper .form_login{
+    margin-top: -122px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 290px;
+    width: 206px;
+    padding: 23px 34px;
+    align-items: center;
+    border-radius: 10px;
+
+}
+.wrapper .form_login h2{
+    text-align: center;
+    background-color: blueviolet;
+    color: white;
+    font-size: 19px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    height: 33px;
+    width: 76px;
+    padding: 3px;
+    border-radius: 10px;
+}
+.wrapper .form_login input,button{
+    height: 30px;
+    width: 170px;
+    border-radius: 10px;
+    outline: unset;
+    border: 1px solid #461919b8;
+}
+.wrapper .form_login i{
+    position: absolute;
+}
+.wrapper .form_login #email{
+    position: relative;
+}
+.wrapper .form_login .link{
+    display: flex;
+    text-align: center;
+    font-family: system-ui;
+    gap: 20px;
+    padding: 10px;
+}
+.wrapper .form_login .link a{
+    font-size: 15px;
+    font-weight: bold;
+    color: purple;
+    text-decoration: none;
+}
+.wrapper .form_login .link a:hover{
+    text-decoration: underline;
+    background-color: rgb(202, 255, 10);
+    border-radius: 10px;
+}

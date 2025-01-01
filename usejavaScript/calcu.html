@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java_script</title>
+    <script>
+        function getname(){
+            var gt = document.getElementById("b");
+            var gts = document.getElementById("b").style
+            gts.backgroundColor = "red";
+            gts.color = "#fff";
+            
+        }
+        function calculate(){
+            var btn = document.getElementById("b");
+            var btns = document.getElementById("b").style;
+            btns.backgroundColor = "blue";
+            btns.color = "#fff";
+            var W = document.getElementById("width").valueAsNumber;
+            var H = document.getElementById("height").valueAsNumber;
+            var total = W * H / 2;
+            document.getElementById("box").innerHTML = total;
+            document.getElementById("box").style.backgroundColor = "brown";
+            document.getElementById("box").style.fontSize = "20px";
+            document.getElementById("box").style.color = "#fff";
+        }
+        function btn(){
+            var click = document.getElementById("box").style;
+            click.backgroundColor = "yellow";
+        }
+    </script>
+    <style>
+
+        #b{
+            align-items: center;
+            text-align: center;
+            transition: 1s;
+            background-color: cyan;
+        }
+        #bt{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        #box{
+            width :80px;
+            height: 40px;
+            background-color: orange;
+            border-radius: 10px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            margin:0 auto;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body >
+    <div id="b">
+        <h1 id="bt" onclick="getname()">
+            Triangel area is :
+        </h1>
+    </div>
+    <input id="width" type="number" placeholder="number">
+    <input id="height" type="number" placeholder="number">
+    <button id="btn" onclick="calculate()">Calculate</button>
+    <div id="box" onclick="btn()">Answer</div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DragAndDrop</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+      }
+      .box {
+        height: 150px;
+        width: 150px;
+        position: absolute;
+      }
+      .box > img {
+        width: 100%;
+        height: 100%;
+      }
+      .box:first-child {
+        top: 200px;
+        left: 300px;
+      }
+      .box:nth-child(2) {
+        top: 100px;
+        left: 700px;
+      }
+      .box:nth-child(3) {
+        top: 200px;
+        left: 500px;
+      }
+      .box:nth-child(4) {
+        top: 200px;
+        left: 800px;
+      }
+      .box:last-child {
+        top: 80px;
+        left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <img src="imgs/house.png" alt="" />
+      </div>
+      <div class="box">
+        <img src="imgs/house-dara.png" alt="" />
+      </div>
+      <div class="box">
+        <img src="imgs/modern-house.png" alt="" />
+      </div>
+      <div class="box">
+        <img src="imgs/mansion.png" alt="" />
+      </div>
+      <div class="box">
+        <img src="imgs/building.png" alt="" />
+      </div>
+    </div>
+    <script>
+      const boxs = document.querySelectorAll(".box");
+      let startX = 0;
+      let startY = 0;
+      let currentBox = undefined;
+      let zIndex = 1;
+
+      boxs.forEach((items) => {
+        items.addEventListener("mousedown", (e) => {
+          currentBox = e.currentTarget;
+          items.style.zIndex = zIndex;
+          zIndex++;
+          startX = e.clientX - currentBox.offsetLeft;
+          startY = e.clientY - currentBox.offsetTop;
+          console.log(startX, startY);
+          document.addEventListener("mousemove", mousemove);
+          document.addEventListener("mouseup", mouseup);
+        });
+      });
+      const mousemove = (e) => {
+        currentBox.style.left = `${e.clientX - startX}px`;
+        currentBox.style.top = `${e.clientY - startY}px`;
+      };
+      const mouseup = () => {
+        document.removeEventListener("mousemove", mousemove);
+      };
+    </script>
+  </body>
+</html>

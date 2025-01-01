@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const currency = (strs, ...para) => {
+        const all = strs.concat(para);
+        console.log(all);
+        return `Word count is ${all.length}`;
+      };
+      const names = "Soytry";
+      const price = "ninety nine";
+      const total = currency`${names.toLocaleUpperCase()} have the total price is $${price}.`;
+      console.log(total); // Output: "The total price is $19.99"
+    </script>
+  </body>
+</html>

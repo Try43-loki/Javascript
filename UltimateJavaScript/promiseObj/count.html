@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const counting = (number, duration) => {
+        const promise = new Promise((resole, reject) => {
+          if (number && duration) {
+            setTimeout(() => {
+              console.log(`Number ${number}`);
+              resole();
+            }, duration);
+          } else {
+            reject();
+          }
+        });
+      };
+      const letCount = async () => {
+        try {
+          await counting(1, 1500);
+          await counting(2, 2000);
+          await counting(3, 2500);
+          await counting(4, 1000);
+        } catch {
+          console.log("Erorr");
+        }
+      };
+      letCount();
+    </script>
+  </body>
+</html>

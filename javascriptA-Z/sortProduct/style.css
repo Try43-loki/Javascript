@@ -1,0 +1,119 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  background: #9e9e9e;
+  display: flex;
+  align-items: center;
+}
+.container > h2 {
+  background: #9e9e9e;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 50px;
+}
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  justify-content: space-between;
+}
+.menu-list {
+  border: 15px;
+  background-color: rgba(255, 255, 255, 0.209);
+  width: 180px;
+  height: auto;
+}
+.ul-list {
+  padding: 15px;
+}
+.ul-list-item {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+}
+.li-style {
+  width: 100%;
+  transition: ease 0.7s;
+  height: 30px;
+  height: auto;
+  text-align: start;
+  background-color: rgba(224, 207, 207, 0.818);
+  box-sizing: border-box;
+  margin: 5px 0px;
+  padding: 0px 10px;
+  line-height: 30px;
+  background: #ffffff38;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  color: #000000a3;
+}
+.li-style:hover {
+  color: #000000a3;
+  background: #1474f24e;
+}
+.li-style.active {
+  color: #000000a3;
+  background: #1f9effa3;
+}
+.product-list {
+  width: 100%;
+  height: auto;
+  background-color: rgba(224, 207, 207, 0.818);
+  padding: 0px 20px;
+  display: grid;
+  justify-content: start;
+  gap: 10px;
+  grid-template-columns: auto auto auto;
+}
+.item-wrapper {
+  padding: 15px;
+  height: 150px;
+  width: 150px;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.5s;
+  margin: 5px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 15px;
+  align-items: center;
+  position: relative;
+}
+.item-wrapper .name-product {
+  font-size: 1.5rem;
+  color: gray;
+}
+.price {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: yellow;
+  width: 30px;
+  padding: 4px;
+  border-radius: 8px;
+}
+.item-wrapper > .img {
+  width: 100px;
+  margin-top: 15px;
+}
+.item-wrapper > .img:hover {
+  scale: 1.1;
+}

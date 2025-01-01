@@ -1,0 +1,3 @@
+before you put data in localStorage u need to convert string using Json Formart
+use JSON.stringify(items); after use this u get string have form like array or object just a string
+u need to use JSON.parse(item) to get array or object is not string

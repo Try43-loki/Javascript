@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DataEmployee</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 class="title">DataEmployee</h1>
+      <form class="employee-form">
+        <div class="firstRow">
+          <div class="employeeInput">
+            <div class="InputId">
+              <input
+                type="text"
+                maxlength="4"
+                class="classId"
+                id="id"
+                placeholder="ID"
+              />
+            </div>
+            <div class="Input">
+              <input
+                type="text"
+                class="data"
+                id="fistname"
+                placeholder="Firstname"
+              />
+              <input
+                type="text"
+                class="data"
+                id="lastname"
+                placeholder="Lastname"
+              />
+            </div>
+            <div class="Input">
+              <input type="text" class="data" id="age" placeholder="Age" />
+              <input
+                type="text"
+                class="data"
+                id="position"
+                placeholder="Position"
+              />
+            </div>
+            <div class="Input">
+              <input
+                type="text"
+                class="data"
+                id="salary"
+                placeholder="Salary"
+              />
+              <input
+                type="text"
+                class="data"
+                id="address"
+                placeholder="Address"
+              />
+            </div>
+            <div class="show">
+              <input type="button" value="submit" id="submit" />
+              <input type="button" value="reset" id="reset" />
+            </div>
+          </div>
+        </div>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+            <th>Position</th>
+            <th>Salary</th>
+            <th>Address</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody class="employee-list"></tbody>
+      </table>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

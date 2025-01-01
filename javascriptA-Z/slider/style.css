@@ -1,0 +1,136 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.slide-container {
+  width: 450px;
+  height: 250px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.img-wrapper {
+  position: relative;
+  width: 450px;
+  height: 250px;
+  display: flex;
+  border-radius: 10px;
+  flex-direction: row;
+  overflow: hidden;
+}
+.active {
+  left: 0%;
+}
+.img-wrapper > img {
+  width: 450px;
+  height: 250px;
+  object-fit: cover;
+  position: absolute;
+}
+.img-wrapper > img:not(.active) {
+  left: -100%;
+}
+.btn-container {
+  position: absolute;
+  top: 50%;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+.next-btn,
+.prev-btn {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  border: none;
+  color: hsla(0, 0%, 0%, 0.506);
+  font-weight: bold;
+  outline: none;
+  background-color: #ffffff8e;
+  backdrop-filter: blur(50px);
+  font-size: 2rem;
+  text-align: center;
+  transition: all 0.5s;
+}
+.prev-btn:hover {
+  color: hsla(0, 0%, 0%, 0.826);
+  background-color: #ffffffb7;
+}
+.next-btn:hover {
+  color: hsla(0, 0%, 0%, 0.826);
+  background-color: #ffffffb7;
+}
+.dots {
+  position: absolute;
+  width: auto;
+  height: 10px;
+  border-radius: 20px;
+  background-color: rgba(99, 94, 94, 0.814);
+  top: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 0px 3px;
+}
+.dot {
+  width: 6px;
+  border-radius: 50%;
+  height: 6px;
+  background-color: #ffffff90;
+  transition: all 0.5s;
+}
+.dot.active-btn {
+  border-radius: 10px;
+  height: 6px;
+  background-color: #ffffff;
+  width: 15px;
+}
+.dot:hover {
+  border-radius: 10px;
+  height: 6px;
+  background-color: #ffffff;
+  width: 15px;
+}
+@keyframes nextOut {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -100%;
+  }
+}
+@keyframes nextIn {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+@keyframes prevOut {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
+}
+@keyframes prevIn {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0%;
+  }
+}

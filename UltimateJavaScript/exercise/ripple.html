@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stylish Todo List with Completion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 h-screen flex justify-center items-center">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+      <h1 class="text-2xl font-bold mb-6 text-center">My To-Do List</h1>
+
+      <!-- Input and Add Button -->
+      <div class="flex mb-4">
+        <input
+          type="text"
+          id="taskInput"
+          placeholder="Add a task..."
+          class="flex-1 border border-gray-300 rounded-l px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+        <button
+          id="addTaskButton"
+          class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600"
+        >
+          Add
+        </button>
+      </div>
+
+      <!-- Task List -->
+      <ul id="taskList" class="mb-4 space-y-2"></ul>
+
+      <!-- Clear Button -->
+      <button
+        id="clearTasksButton"
+        class="w-full bg-red-500 text-white py-2 rounded hover:bg-red-600"
+      >
+        Clear All Tasks
+      </button>
+    </div>
+
+    <script>
+      const input = document.getElementById("taskInput");
+      const btnAdd = document.getElementById("addTaskButton");
+      const ul = document.getElementById("taskList");
+      const btnClear = document.getElementById("clearTasksButton");
+
+      // Load tasks from localStorage on page load
+      document.addEventListener("DOMContentLoaded", () => {
+        ul.innerHTML = localStorage.getItem("todoList") || "";
+      });
+
+      // Add task to the list and save to localStorage
+      const addTask = () => {
+        const taskValue = input.value.trim();
+        if (!taskValue) {
+          alert("Please add a task.");
+        } else {
+          const li = document.createElement("li");
+          li.className =
+            "bg-gray-200 px-4 py-2 rounded flex justify-between items-center";
+          li.innerHTML = `
+            <span class="task-text">${taskValue}</span>
+            <button class="text-red-500 hover:text-red-700 removeTask">x</button>`;
+
+          ul.appendChild(li);
+          saveTasks();
+        }
+        input.value = ""; // Clear the input field
+      };
+
+      // Save tasks to localStorage
+      const saveTasks = () => {
+        localStorage.setItem("todoList", ul.innerHTML);
+      };
+
+      // Add task when clicking the add button
+      btnAdd.addEventListener("click", addTask);
+
+      // Add task when pressing Enter key
+      input.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") addTask();
+      });
+
+      // Mark task as complete by clicking on it
+      ul.addEventListener("click", (e) => {
+        if (e.target.classList.contains("task-text")) {
+          e.target.classList.toggle("line-through");
+          e.target.classList.toggle("text-gray-500");
+          saveTasks();
+        }
+
+        // Remove task from the list
+        if (e.target.classList.contains("removeTask")) {
+          e.target.parentElement.remove();
+          saveTasks();
+        }
+      });
+
+      // Clear all tasks
+      btnClear.addEventListener("click", () => {
+        ul.innerHTML = "";
+        saveTasks();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function print(gender, major) {
+        console.log(
+          `${this.name}, you are ${this.age} is ${gender} study ${major}`
+        );
+      }
+
+      const person1 = { name: "Dara", age: 18 };
+      const person2 = { name: "Sok", age: 20 };
+
+      // for call
+      print.call(person1, "Male", "IT");
+      // for apply
+      print.apply(person2, ["Female", "CS"]);
+      //for bind
+      const result = print.bind(person2, "Female", "ITE");
+      result();
+      console.log("drat");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      height: 100vh;
+      padding: 0;
+      margin: 0;
+    }
+    div {
+      background-color: yellow;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      flex-direction: column;
+      gap: 10px;
+      padding: 20px;
+    }
+  </style>
+  <body>
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque alias
+        corrupti ea velit fugit optio, magnam ipsum ab quod recusandae,
+        blanditiis esse nemo praesentium ducimus. Accusamus repudiandae
+        similique eos nihil.
+      </p>
+      <button>Click</button>
+    </div>
+    <script>
+      const div = document.querySelector("div");
+      const button = document.querySelector("button");
+      const p = document.querySelector("p");
+      const body = document.querySelector("body");
+      div.addEventListener("click", (stop) => {
+        stop.stopPropagation();
+        console.log("div");
+      });
+      p.addEventListener("click", (stop) => {
+        stop.stopPropagation();
+        console.log("p");
+      });
+      button.addEventListener("click", (stop) => {
+        stop.stopPropagation();
+        console.log("button");
+      });
+
+      body.addEventListener("click", () => {
+        console.log("body");
+      });
+    </script>
+  </body>
+</html>

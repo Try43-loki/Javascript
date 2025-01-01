@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setInteral</title>
+  </head>
+  <body>
+    <button class="start">start</button>
+    <button class="stop">stop</button>
+    <h1>count</h1>
+    <script>
+      const btnStart = document.querySelector(".start");
+      const btnStop = document.querySelector(".stop");
+      const h1 = document.querySelector("h1");
+      var count = 0;
+      var intervalId = null;
+      const showNum = () => {
+        h1.innerHTML = count;
+        count++;
+        console.log(count);
+      };
+      const counting = () => {
+        if (intervalId !== null) {
+          clearInterval(intervalId);
+        }
+        intervalId = setInterval(showNum, 10);
+      };
+      const stopCount = () => {
+        clearInterval(intervalId);
+      };
+      btnStart.addEventListener("click", counting);
+      btnStop.addEventListener("click", stopCount);
+    </script>
+  </body>
+</html>

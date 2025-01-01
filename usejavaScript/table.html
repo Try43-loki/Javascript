@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    .wrapper{
+        display: flex;
+        height: 300px;
+        border-radius: 10px;
+        flex-direction: row;
+        padding: 10px;
+        border: 1px solid black;
+    }
+    .wrapper .box_list{
+        width: 25%;
+        /* padding: 0px 0px 0px 3px; */
+        /* height: 300px; */
+        /* display: inline; */
+        border: 1px solid cyan;
+        background-color: orange;
+        /* display: inline-block; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .wrapper .box_list .form_list label{
+        display: inline-block;
+        width: 110px;
+    }
+    .wrapper .box_list .form_list input{
+        width: 130px;
+        height: 23px;
+        border-radius: 5px;
+        outline: unset;
+        border:unset;
+        padding: 0px 5px;
+    }
+    .wrapper .box_list .form_list select{
+        height: 23px;
+        border-radius: 5px;
+        outline: unset;
+        border:unset;
+        width: 139px;
+    }
+    .wrapper .box_list .form_list .btnSave{
+        height: 20px;
+        width: 60px;
+        background-color: greenyellow;
+        font-size:16px;
+        color:#000000;
+    }
+    .wrapper .box_list .form_list .btnClear{
+        height: 20px;
+        width: 60px;
+        margin-left: 10px;
+        background-color: red;
+        font-size:16px;
+        color:#fff;
+    }
+    .wrapper .list_ifo{
+        border-radius: 10px;
+        width: 75%;
+        margin-left: 10px;
+        border: 1px solid black;
+        background-color: rgb(223, 212, 181);
+        padding: 10px;
+    }
+    .wrapper .list_ifo table thead{
+        background-color: green;
+        height: 30px;
+        color:#fff;
+    }
+   </style> 
+   <script>
+    var str ="";
+    function saveform(){
+        var id = document.getElementById("textStudentID").value;
+        var name = document.getElementById("textStudentName").value;
+        var gender = document.getElementById("textgender").value;
+        var math = document.getElementById("Math").value;
+        var english = document.getElementById("English").value;
+        var khmer = document.getElementById("Khmer").value;
+        var tbody =  document.getElementById("Infostudent");
+        str = str +`
+        <tr>
+            <td>`+id+`</td>
+            <td>`+name+`</td>
+            <td>`+gender+`</td>
+            <td>`+math+`</td>
+            <td>`+english+`</td>
+            <td>`+khmer+`</td>
+        </tr>`;
+        tbody.innerHTML = str;
+    }
+    function clearform(){
+        var id = document.getElementById("textStudentID").value ="";
+        var name = document.getElementById("textStudentName").value ="";
+        var gender = document.getElementById("textgender").value ="Please select gender:";
+        var math = document.getElementById("Math").value ="";
+        var english = document.getElementById("English").value ="";
+        var khmer = document.getElementById("Khmer").value ="";
+    }
+   </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box_list">
+            <div class="form_list">
+                <label>Student ID:
+                    
+                </label>
+                <input type="text" id="textStudentID" placeholder="1001">
+            </div>
+            <div class="form_list">
+                <label>Student Name:
+                    
+                </label>
+                <input type="text" id="textStudentName" placeholder="Iron Man">
+            </div>
+            <div class="form_list" >
+                <label>Gender :
+                </label>
+                <select id="textgender"  >
+                    <option>Please select gender:</option>
+                    <option>Male</option>
+                    <option>Famale</option>
+                </select>
+            </div>
+            <div class="form_list">
+                <label>Math :
+                    
+                </label>
+                <input type="number" id="Math" placeholder="00">
+            </div>
+            <div class="form_list">
+                <label>English :
+                    
+                </label>
+                <input type="number" id="English" placeholder="00">
+            </div>
+            <div class="form_list">
+                <label>Khmer :
+                    
+                </label>
+                <input type="number" id="Khmer" placeholder="00">
+            </div>
+            <div class="form_list">
+                <input class="btnSave" onclick="saveform()" type="button" value="Save">
+                <input class="btnClear" onclick="clearform()" type="button" value="Clear">
+            </div>
+        </div>
+        <div class="list_ifo">
+            <table border="1" width="100%">
+                <thead>
+                    <tr>
+                        <th>
+                            StudentID
+                        </th>
+                        <th>
+                            Student Name
+                        </th>
+                        <th>
+                            Gender
+                        </th>
+                        <th>
+                            Math
+                        </th>
+                        <th>
+                            English
+                        </th>
+                        <th>
+                            Khmer
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="Infostudent">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

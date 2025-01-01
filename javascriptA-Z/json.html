@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="in-data" type="text" />
+    <button id="btn-get">Click</button>
+    <div id="title"></div>
+    <script>
+      const inData = document.getElementById("in-data");
+      const btnGet = document.getElementById("btn-get");
+      var title = document.getElementById("title");
+      var data = { Id: "101", Name: "Mey SoyTry", Gender: "Male" };
+      var obj = JSON.parse(data);
+      var result = `<h3>` + obj.Name + `</h3>`;
+    </script>
+  </body>
+</html>

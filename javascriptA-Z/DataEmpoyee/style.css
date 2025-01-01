@@ -1,0 +1,180 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  background: linear-gradient(to right, rgb(30, 255, 5), dodgerblue);
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.wrapper {
+  padding: 0px 40px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.firstRow {
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  align-items: center;
+  flex-direction: column;
+}
+.employeeInput {
+  height: auto;
+  padding: 15px;
+  background-color: #ffffff00;
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 0;
+}
+.InputId {
+  width: 100%;
+  padding: auto;
+}
+.InputId input {
+  padding: 3px 5px;
+  margin: 0;
+  height: 32px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid rgba(255, 255, 255, 0.354);
+  border-radius: 6px;
+  outline: none;
+}
+.Input {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.data {
+  height: 32px;
+  box-sizing: border-box;
+  padding: 3px 5px;
+  width: 48%;
+  border: 2px solid rgba(255, 255, 255, 0.354);
+  border-radius: 6px;
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+
+  outline: none;
+}
+.InputId input:focus {
+  box-shadow: 0px 0px 5px 0px dodgerblue;
+  border: 2px solid rgba(0, 200, 255, 0.903);
+}
+.data:focus {
+  box-shadow: 0px 0px 5px 0px dodgerblue;
+  border: 2px solid rgba(0, 200, 255, 0.903);
+}
+
+.show input {
+  height: 32px;
+  border-radius: 6px;
+  outline: none;
+  font-weight: bold;
+}
+#reset {
+  border: 2px solid red;
+  color: #ffff;
+  font-size: 1.5rem;
+  background-color: rgb(255, 0, 0);
+}
+#reset:active {
+  border: 2px solid rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
+}
+#submit {
+  border: 2px solid rgb(0, 255, 55);
+  color: #000000;
+  font-size: 1.5rem;
+  background-color: rgb(0, 255, 55);
+}
+#submit:active {
+  border: 2px solid rgb(0, 136, 255);
+  background-color: dodgerblue;
+  color: #ffffffe5;
+}
+.show {
+  width: 100%;
+}
+.manange {
+  width: 100%;
+  position: relative;
+}
+.man {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 1.7rem;
+}
+
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even) {
+  background-color: rgb(0, 200, 255);
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
+}
+#edit,
+#delete {
+  text-decoration: none;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 1.7rem;
+  color: #fff;
+}
+#edit {
+  background-color: dodgerblue;
+}
+#delete {
+  background-color: red;
+}

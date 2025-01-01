@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Datatype</title>
+    <style>
+        .box{
+            padding: 5px;
+            display: flex;
+            margin: 0px auto;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            text-align: center;
+            font-weight: bold;
+            color:#fff;
+        }
+    </style>
+    <script>
+        var x = prompt("plx in put width :");
+        var y = prompt("plx in put height :");
+        var bg = prompt("pls set background color :");
+        var circle = confirm("do you want it to be circle ?");
+        var circles = "";
+        if (circle == true){
+            var circles = "border-radius:50%";
+        }else{
+            circles = "";
+        }
+        x = x +"px";
+        y = y +"px";
+        var mybox = "<div class='box' style='width:"+x+";height:"+y+";background-color:"+bg+";"+circles+"' >1<div>";
+        
+        document.write(mybox);
+    </script>
+</head>
+<body> 
+     <div id="hello" onclick="box">
+     </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: hsla(0, 0%, 50%, 0.559);
+}
+.wrapper {
+  width: 200px;
+  height: 200px;
+  background-color: hsla(0, 0%, 0%, 0.752);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  border-radius: 20px;
+}
+.time {
+  text-align: center;
+}
+.time > h2 {
+  font-size: 2.5rem;
+  color: #ffff;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.title {
+  font-size: 2rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: hsla(0, 0%, 100%, 0);
+  background: linear-gradient(to right, yellow, rgb(10, 182, 239));
+  background-clip: text;
+}
+.group-btn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+.btn {
+  padding: 5px;
+  border-radius: 6px;
+  border: none;
+  width: 60px;
+  background-color: rgba(206, 205, 205, 0.869);
+}
+.btn.active {
+  background-color: hsl(0, 0%, 96%);
+}
+.btn:hover {
+  background-color: hsl(0, 0%, 96%);
+}

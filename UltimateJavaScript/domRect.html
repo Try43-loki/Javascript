@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        position: relative;
+        height: 200vh;
+      }
+      .box {
+        background-color: cyan;
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        top: 50px;
+        left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <script>
+      const box = document.querySelector(".box");
+      box.addEventListener("click", (e) => {
+        // console.log("offsetX " + e.offsetX);
+        // console.log("offsetY " + e.offsetY);
+        // console.log("clientX " + e.clientX);
+        // console.log("clientY " + e.clientY);
+        // console.log("pageX " + e.pageX);
+        // console.log("pageY " + e.pageY);
+        const bounding = box.getBoundingClientRect();
+        console.log(bounding);
+      });
+    </script>
+  </body>
+</html>
