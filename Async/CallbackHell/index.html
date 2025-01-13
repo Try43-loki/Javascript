@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      setTimeout(() => {
+        console.log("Starting...");
+        setTimeout(() => {
+          console.log("Spider Man");
+          setTimeout(() => {
+            console.log("Transformer");
+            setTimeout(()=>{
+                console.log("Iron Man");
+                setTimeout(()=>{
+                    console.log("Ending...")
+                },500)
+            },1500)
+          }, 1000);
+        }, 1000);
+      }, 500);
+    </script>
+  </body>
+</html>

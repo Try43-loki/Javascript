@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #222;
+        color: white;
+        font-family: sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .wrapper {
+        background-color: rgb(44, 44, 44);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 3rem;
+        border-radius: 20px;
+      }
+      #counter {
+        font-size: 3rem;
+      }
+      .btns button {
+        background-color: dodgerblue;
+        font-size: 2rem;
+        padding: 0.5rem 2.5rem;
+        border: none;
+        outline: none;
+        border-radius: 15px;
+        color: white;
+        cursor: pointer;
+        letter-spacing: 4px;
+      }
+      button.stop {
+        background-color: gray;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="counter">counter</div>
+      <div class="btns">
+        <button class="start">Start</button>
+        <button class="stop">Stop</button>
+      </div>
+    </div>
+    <script>
+      const startBtn = document.querySelector(".start");
+      const stopBtn = document.querySelector(".stop");
+      const counter = document.getElementById("counter");
+
+      let n = 0;
+      let intervalId = null;
+
+      function counting() {
+        counter.textContent = n;
+        n++;
+      }
+
+      function startCounting() {
+        if (intervalId !== null) {
+          clearInterval(intervalId);
+        }
+        //   clearInterval(intervalId); ឬអាច clear យកតែម្ដងក៏បាន
+        intervalId = setInterval(counting, 1000);
+      }
+
+      function stopCounting() {
+        clearInterval(intervalId);
+        intervalId = null; // ដាក់ក៏បាន មិនដាក់ក៏បាន ព្រោះយើងបានធ្វើការ Clear ពេល startCounting ខាងលើហើយ
+      }
+
+      stopBtn.addEventListener("click", stopCounting);
+      startBtn.addEventListener("click", startCounting);
+
+      startCounting();
+    </script>
+  </body>
+</html>

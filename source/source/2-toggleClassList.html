@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+    <style>
+      body {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        background-color: black;
+        color: white;
+        height: 100vh;
+      }
+      .box {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background-color: dodgerblue;
+        margin-top: 0px;
+        opacity: 1;
+        transition: all 0.3s;
+      }
+      .box.hide {
+        opacity: 0;
+        margin-top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <script>
+      const box = document.querySelector(".box");
+
+      document.body.onclick = function () {
+        box.classList.toggle("hide");
+        //   if (box.classList.contains("hide")) {
+        //     box.classList.remove("hide");
+        //   } else {
+        //     box.classList.add("hide");
+        //   }
+      };
+    </script>
+  </body>
+</html>

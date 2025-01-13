@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>JavaScript</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+      }
+      .hero-section {
+        height: 100vh;
+        background-image: url("https://cdn.pixabay.com/photo/2019/04/11/13/45/sea-4119816_1280.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .show-btn {
+        background-color: rgba(255, 255, 255, 0.7);
+        color: rgb(11, 63, 116);
+        letter-spacing: 2px;
+        backdrop-filter: blur(10px);
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        padding: 1rem 2.5rem;
+        font-size: 2rem;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .show-btn:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 5px 15px 40px rgba(19, 42, 66, 0.4);
+      }
+      .close-btn {
+        color: rgb(68, 68, 68);
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .close-btn:hover {
+        transform: rotate(90deg);
+      }
+      .bg-overlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        visibility: hidden;
+      }
+      .model {
+        position: relative;
+        width: 400px;
+        height: 250px;
+        background-color: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+        align-content: center;
+        text-align: center;
+        border: 1px solid rgb(114, 114, 114);
+        transform: scale(1, 0);
+        opacity: 0;
+        filter: blur(30px);
+        transition: all 0.2s ease;
+      }
+      .model.active {
+        transform: scale(1, 1);
+        opacity: 1;
+        filter: blur(0);
+      }
+      .model > h3 {
+        color: black;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero-section">
+      <button class="show-btn">Open Model</button>
+      <!-- model box -->
+      <div class="bg-overlay">
+        <div class="model">
+          <h3>reanmore.com</h3>
+          <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+    </section>
+    <script>
+      const showBtn = document.querySelector(".show-btn");
+      const closeBtn = document.querySelector(".close-btn");
+      const overlayBg = document.querySelector(".bg-overlay");
+      const model = document.querySelector(".model");
+
+      function toggleModel(isShow) {
+        if (isShow) {
+          overlayBg.style.visibility = "visible";
+          model.classList.add("active");
+        } else {
+          overlayBg.style.visibility = "hidden";
+          model.classList.remove("active");
+        }
+      }
+
+      showBtn.addEventListener("click", () => toggleModel(true));
+      closeBtn.addEventListener("click", () => toggleModel(false));
+      overlayBg.addEventListener("click", function (e) {
+        if (e.target === overlayBg) {
+          toggleModel(false);
+        }
+      });
+    </script>
+  </body>
+</html>

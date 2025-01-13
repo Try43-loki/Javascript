@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // promise
+        const performSong =(name,duration)=>{
+            return new Promise((resolve , reject)=>{
+                if(name&& duration){
+                    setTimeout(()=>{
+                        console.log(`Sing song ${name}`);
+                        resolve();
+                    },duration);
+                }else{
+                    reject("There's no song here!")
+                }
+            })
+        }
+        const liveConcert =()=>{
+            console.log("Starting live...");
+            performSong("A",2000)
+            .then(()=> performSong("B",2000))
+            .then(()=> performSong("C",2000))
+            .then(()=> console.log("Ending"))
+            .catch((error)=>{
+                console.error(error);
+            })
+
+        }
+        liveConcert();
+    </script>
+</body>
+</html>

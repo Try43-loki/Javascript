@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position Comparison</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      body {
+        background-color: #222;
+        color: white;
+        font-family: sans-serif;
+      }
+      .box {
+        padding: 1.5rem 2rem;
+        width: 400px;
+        background-color: rgba(0, 128, 255, 0.4);
+        position: absolute;
+        top: 30px;
+        left: 20px;
+        border-radius: 15px;
+        border: 2.5px solid rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+        backdrop-filter: blur(25px) saturate(1.5);
+        box-shadow: 5px 5px 15px 0 rgb(0, 0, 0, 0.2);
+      }
+      .box::before {
+        content: "";
+        display: block;
+        height: 90%;
+        width: 10px;
+        border-radius: 25px;
+        background-color: rgba(255, 255, 255, 0.2);
+        position: absolute;
+        left: 6px;
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: 2px 0 15px 0 rgb(0, 0, 0, 0.3);
+      }
+
+      .box > p {
+        font-weight: 100;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        line-height: 1.5;
+        user-select: none;
+        opacity: 0.8;
+      }
+      .box:nth-child(2) {
+        background-color: rgba(255, 162, 0, 0.4);
+        left: 400px;
+        top: 100px;
+      }
+      .box:nth-child(3) {
+        background-color: rgba(0, 255, 0, 0.4);
+        left: 50px;
+        top: 450px;
+      }
+      .box:last-child {
+        background-color: rgba(255, 60, 30, 0.4);
+        left: 500px;
+        top: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam,
+          repellat?
+        </p>
+      </div>
+      <div class="box">
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam,
+          repellat?
+        </p>
+      </div>
+      <div class="box">
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam,
+          repellat?
+        </p>
+      </div>
+      <div class="box">
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam,
+          repellat?
+        </p>
+      </div>
+    </div>
+    <script>
+      const boxes = document.querySelectorAll(".box");
+      let startX = 0;
+      let startY = 0;
+      let currentBox = undefined;
+      let index = 1;
+
+      boxes.forEach(function (box) {
+        box.addEventListener("mousedown", function (e) {
+          currentBox = e.currentTarget;
+
+          currentBox.style.zIndex = index;
+          index++;
+
+          startX = e.clientX - currentBox.offsetLeft;
+          startY = e.clientY - currentBox.offsetTop;
+          document.addEventListener("mousemove", mouseMove);
+          document.addEventListener("mouseup", mouseUp);
+        });
+      });
+
+      function mouseMove(e) {
+        currentBox.style.left = `${e.clientX - startX}px`;
+        currentBox.style.top = `${e.clientY - startY}px`;
+      }
+
+      function mouseUp() {
+        document.removeEventListener("mousemove", mouseMove);
+      }
+    </script>
+  </body>
+</html>

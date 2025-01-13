@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+    <style>
+      body {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        background-color: black;
+        color: white;
+      }
+      .heading {
+        color: gold;
+      }
+      .btn {
+        background-color: gold;
+        font-size: 1.5rem;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        padding: 0.2rem 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="heading">reanmore.com</h1>
+    <button class="btn">Show & Hide</button>
+    <script>
+      const btn = document.querySelector(".btn");
+      btn.onclick = function () {
+        const heading = document.querySelector(".heading");
+        if (heading.style.display === "none") {
+          heading.style.display = "block";
+        } else {
+          heading.style.display = "none";
+        }
+      };
+    </script>
+  </body>
+</html>
